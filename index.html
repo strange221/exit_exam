@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airbnb Price Prediction</title>
+</head>
+<body>
+    <h1>Airbnb Price Prediction</h1>
+    <form action="/predict" method="post">
+        <label>Neighbourhood:</label>
+        <input type="text" name="Neighbourhood"><br><br>
+
+        <label>Room Type:</label>
+        <input type="text" name="Room Type"><br><br>
+
+        <label>Beds:</label>
+        <input type="number" name="Beds"><br><br>
+
+        <label>Number Of Reviews:</label>
+        <input type="number" name="Number Of Reviews"><br><br>
+
+        <input type="submit" value="Predict Price Range">
+    </form>
+
+    {% if point_estimate %}
+        <h2>Prediction Result</h2>
+        <p>Point Estimate: {{ point_estimate }}</p>
+        <p>Predicted Price Range: {{ price_range }}</p>
+    {% endif %}
+</body>
+</html>
